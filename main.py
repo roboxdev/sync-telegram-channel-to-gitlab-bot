@@ -17,7 +17,7 @@ BOT_TOKEN = os.environ.get('BOT_TOKEN')
 GITLAB_API_TOKEN = os.environ.get('GITLAB_API_TOKEN')
 REPOSITORY_BASE_URL = os.environ.get('REPOSITORY_BASE_URL')
 
-CHAT_ID = int(os.environ.get('CHAT_ID', 0))
+CHANNEL_ID = int(os.environ.get('CHANNEL_ID', 0))
 OWNER_ID = int(os.environ.get('OWNER_ID', 0))
 
 TG_POST_FILE_PATH = os.environ.get('TG_POST_FILE_PATH', 'content/tgposts/{}/index.md')
@@ -94,7 +94,7 @@ def chat_message_handler(update, context):
 
 
 def set_handlers(dispatcher):
-    message_filters = Filters.chat(chat_id=CHAT_ID)
+    message_filters = Filters.chat(chat_id=CHANNEL_ID)
     message_handler = MessageHandler(
         filters=message_filters,
         callback=chat_message_handler,
