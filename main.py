@@ -13,12 +13,12 @@ logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
 
-BOT_TOKEN = os.environ['BOT_TOKEN']
-GITLAB_API_TOKEN = os.environ['GITLAB_API_TOKEN']
-REPOSITORY_BASE_URL = os.environ['REPOSITORY_BASE_URL']
+BOT_TOKEN = os.environ.get('BOT_TOKEN')
+GITLAB_API_TOKEN = os.environ.get('GITLAB_API_TOKEN')
+REPOSITORY_BASE_URL = os.environ.get('REPOSITORY_BASE_URL')
 
-CHAT_ID = int(os.environ['CHAT_ID'])
-OWNER_ID = int(os.environ['OWNER_ID'])
+CHAT_ID = int(os.environ.get('CHAT_ID', 0))
+OWNER_ID = int(os.environ.get('OWNER_ID', 0))
 
 TG_POST_FILE_PATH = os.environ.get('TG_POST_FILE_PATH', 'content/tgposts/{}/index.md')
 
